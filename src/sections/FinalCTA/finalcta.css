@@ -1,0 +1,57 @@
+.finalcta {
+  overflow: hidden;
+  position: relative;
+}
+
+.finalcta__glow {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(200, 165, 90, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.finalcta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.finalcta__label {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.finalcta__heading {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  color: var(--color-white);
+  max-width: 16ch;
+}
+
+.finalcta__heading em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.finalcta__text {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--color-gray-light);
+  max-width: 50ch;
+}

@@ -6,28 +6,12 @@ import './testimonials.css';
 
 const testimonials = [
   {
-    name: 'Camila S.',
-    text: 'Em 3 semanas já tinha perdido 4kg comendo pizza no final de semana. Nunca pensei que fosse possível!',
+    name: 'Paciente 1',
+    text: 'Oieee! Passando aqui pra dar um feedback super sincero desses 6 meses de acompanhamento (e que continuarão por mais tempo, tenho certeza!)\n\nQuando olho pra todo o processo, desde a 1ª consulta até aqui, é muito nítido que estivemos em várias fases e realidades de vida, rotina, saúde... mas ainda sim, você consegue ser muito flexível e trazer adaptabilidade, sem perder o foco principal.\n\nNunca teve terrorismo nutricional, nunca teve dieta radical, mas a boa e sempre certeira: reeducação alimentar. E consegui atingir meus objetivos, até mais do que pensei conseguir porque tive o apoio e ajuda, fora as mil respostas para as minhas mil dúvidas e curiosidades hahah.\n\nMas o sentimento é de total gratidão e satisfação de ter um nutricionista bem preparado e focado em atingir objetivos junto dos pacientes. Não é à toa que trouxe mais 3 pacientes pro consultório kkkkk.\n\nÉ isso, obrigadaaa!! Vamos voltar com tudo!!',
   },
   {
-    name: 'Fernanda M.',
-    text: 'Eu já tinha desistido de emagrecer. O Leonardo mudou completamente minha relação com a comida.',
-  },
-  {
-    name: 'Ana Paula R.',
-    text: 'O plano é tão personalizado que nem parece dieta. Estou amando os resultados e comendo o que gosto.',
-  },
-  {
-    name: 'Juliana C.',
-    text: 'Perdi 7kg em 2 meses sem cortar nada. Meu guarda-roupa inteiro voltou a servir!',
-  },
-  {
-    name: 'Beatriz L.',
-    text: 'O acompanhamento pelo WhatsApp faz toda a diferença. Me sinto acolhida e motivada todos os dias.',
-  },
-  {
-    name: 'Mariana T.',
-    text: 'Finalmente consegui colocar biquíni sem vergonha. Obrigada, Leonardo! Método incrível.',
+    name: 'Paciente 2',
+    text: 'Quero deixar aqui meu agradecimento ao Leo, que fez toda a diferença nessa minha mudança de hábitos alimentares. Desde o começo, ele teve o cuidado de montar um plano alimentar que se encaixasse de verdade na minha rotina, leve, prático e com refeições tão gostosas que nem parecia que eu estava de dieta.\n\nEle sempre buscou facilitar ao máximo, o que tornou tudo muito mais leve e sustentável. Os materiais de apoio também foram essenciais — cheios de dicas e sugestões que me ajudaram a fazer trocas inteligentes no dia a dia.\n\nCom ele, cuidar da alimentação deixou de ser um peso e virou parte da minha rotina sem restrições ou terrorismo.',
   },
 ];
 
@@ -38,7 +22,7 @@ const Testimonials: React.FC = () => {
         <div className="testimonials__content">
           <span className="testimonials__label">Resultados Reais</span>
           <h2 className="testimonials__heading">
-            Mulheres comuns, assim como você, que <em>aprovaram</em> o método
+            Veja o que <em>pacientes reais</em> dizem sobre o método
           </h2>
 
           <div className="testimonials__grid">
@@ -47,7 +31,7 @@ const Testimonials: React.FC = () => {
                 <div className="testimonials__card-stars" aria-label="5 estrelas">
                   ★★★★★
                 </div>
-                <p className="testimonials__card-text">"{t.text}"</p>
+                <p className="testimonials__card-text">{t.text}</p>
                 <span className="testimonials__card-name">— {t.name}</span>
               </div>
             ))}

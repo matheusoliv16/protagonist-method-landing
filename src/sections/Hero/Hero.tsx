@@ -10,6 +10,11 @@ const Hero: React.FC = () => {
       <div className="hero__bg-accent" aria-hidden="true" />
       <Container narrow>
         <div className="hero__content">
+          <div className="hero__photo">
+            <div className="hero__photo-placeholder">
+              <span>Foto do Léo</span>
+            </div>
+          </div>
           <span className="hero__label">Método Protagonista do Emagrecimento</span>
           <h1 className="hero__title">
             Essa é a <em>última vez</em> que você vai tentar emagrecer

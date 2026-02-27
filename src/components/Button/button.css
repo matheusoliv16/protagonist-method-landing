@@ -29,7 +29,7 @@
 .btn--primary {
   background-color: var(--color-gold);
   color: var(--color-black);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   position: relative;
   overflow: hidden;
 }
@@ -63,7 +63,7 @@
   background-color: transparent;
   color: var(--color-gold);
   border: var(--border-gold);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
 }
 
 .btn--secondary:hover {

@@ -55,6 +55,26 @@
   color: var(--color-gold);
 }
 
+.hero__photo {
+  margin-bottom: var(--space-sm);
+}
+
+.hero__photo-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-black);
+  border: 3px solid var(--color-gold-light);
+  box-shadow: 0 0 40px rgba(200, 165, 90, 0.2);
+}
+
 .hero__subtitle {
   font-size: var(--fs-body-lg);
   line-height: var(--lh-relaxed);

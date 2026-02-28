@@ -21,24 +21,37 @@ const Navbar: React.FC = () => {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <Container>
         <div className="navbar__inner">
-          <a href="#hero" className="navbar__logo">Método Protagonista</a>
+          <a href="#hero" className="navbar__logo" onClick={closeMenu}>
+            Método Protagonista
+          </a>
 
           <button
-            className="navbar__toggle"
+            className={`navbar__toggle ${menuOpen ? 'is-open' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             <span className="navbar__toggle-bar" />
             <span className="navbar__toggle-bar" />
             <span className="navbar__toggle-bar" />
           </button>
 
-          <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
+          <div
+            id="mobile-menu"
+            className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}
+          >
+            {/* Botão de fechar (aparece só no mobile via CSS) */}
+            <button className="navbar__close" onClick={closeMenu} aria-label="Fechar menu">
+              ✕
+            </button>
+
             <a href="#method" className="navbar__link" onClick={closeMenu}>O Método</a>
             <a href="#deliverables" className="navbar__link" onClick={closeMenu}>Entregáveis</a>
             <a href="#testimonials" className="navbar__link" onClick={closeMenu}>Depoimentos</a>
             <a href="#about" className="navbar__link" onClick={closeMenu}>Sobre</a>
             <a href="#faq" className="navbar__link" onClick={closeMenu}>FAQ</a>
+
             <a
               href={WHATSAPP_LINK}
               target="_blank"

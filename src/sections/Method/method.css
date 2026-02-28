@@ -21,7 +21,7 @@
 .method__intro {
   font-size: var(--fs-body-lg);
   line-height: var(--lh-relaxed);
-  color: var(--color-gray-light);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 55ch;
 }
 
@@ -79,7 +79,7 @@
 .method__step-desc {
   font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
-  color: var(--color-gray-light);
+  color: rgba(255, 255, 255, 0.90);
 }
 
 /* ── CTA ── */

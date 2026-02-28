@@ -22,7 +22,6 @@ const Bonus: React.FC = () => {
     <Section id="bonus" variant="darker">
       <Container narrow>
         <div className="bonus__content">
-          <span className="bonus__label">Bônus Exclusivos</span>
           <h2 className="bonus__heading">
             E você ainda leva de <em>presente</em>:
           </h2>

@@ -57,9 +57,6 @@ const Footer: React.FC = () => {
             <p className="footer__copy">
               © {year} Leonardo Nutricionista. Todos os direitos reservados.
             </p>
-            <p className="footer__disclaimer">
-              Este site não faz parte do Facebook ou do Google. Resultados podem variar de pessoa para pessoa.
-            </p>
           </div>
         </div>
       </Container>

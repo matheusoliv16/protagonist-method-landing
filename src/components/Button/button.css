@@ -3,26 +3,44 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+
   font-family: var(--font-body);
   font-weight: var(--fw-semibold);
   font-size: var(--fs-small);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
+
   border: none;
   cursor: pointer;
   transition: all var(--duration-normal) var(--ease-out);
-  white-space: nowrap;
+
+  /* Evita botão estourar o layout no mobile */
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Tap target mínimo (mobile) */
+.btn {
+  min-height: 48px;
 }
 
 /* ── Sizes ── */
 .btn--default {
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.25rem;
 }
 
 .btn--large {
-  padding: 1.25rem 3rem;
+  padding: 1.1rem 2.5rem;
   font-size: var(--fs-body);
+}
+
+/* Se você quiser “full width” por classe depois */
+.btn--block {
+  width: 100%;
 }
 
 /* ── Primary ── */
@@ -83,4 +101,11 @@
 .btn--ghost:hover {
   color: var(--color-gold);
   border-bottom-color: var(--color-gold);
+}
+
+/* Mobile: botões costumam converter melhor mais “largos” quando CTA principal */
+@media (max-width: 480px) {
+  .btn--large {
+    width: 100%;
+  }
 }

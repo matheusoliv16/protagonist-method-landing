@@ -27,7 +27,7 @@
 .problem__text p {
   font-size: var(--fs-body-lg);
   line-height: var(--lh-relaxed);
-  color: var(--color-gray-light);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .problem__insight {
@@ -60,6 +60,6 @@
 .problem__conclusion {
   font-size: var(--fs-body-lg);
   line-height: var(--lh-relaxed);
-  color: var(--color-gray-light);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 55ch;
 }

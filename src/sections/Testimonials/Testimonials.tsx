@@ -20,7 +20,6 @@ const Testimonials: React.FC = () => {
     <Section id="testimonials" variant="dark">
       <Container>
         <div className="testimonials__content">
-          <span className="testimonials__label">Resultados Reais</span>
           <h2 className="testimonials__heading">
             Veja o que <em>pacientes reais</em> dizem sobre o método
           </h2>

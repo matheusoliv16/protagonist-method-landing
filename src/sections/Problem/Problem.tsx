@@ -40,7 +40,7 @@ const Problem: React.FC = () => {
 
           <p className="problem__conclusion">
             E quando um plano respeita a tua rotina, os teus gostos e a tua vida, o teu 
-            corpo responde diferente — e aí que o emagrecimento de verdade começa.
+            corpo responde diferente e aí que o emagrecimento de verdade começa.
           </p>
 
           <Button>Quero ter resultados mesmo comendo o que gosto</Button>

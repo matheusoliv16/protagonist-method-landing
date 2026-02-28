@@ -1,7 +1,23 @@
 .section {
-  padding-top: var(--space-section);
-  padding-bottom: var(--space-section);
   position: relative;
+
+  /* Espaçamento mobile-first, evitando section “gigante” no celular */
+  padding-top: clamp(48px, 7vw, var(--space-section));
+  padding-bottom: clamp(48px, 7vw, var(--space-section));
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: clamp(64px, 7vw, var(--space-section));
+    padding-bottom: clamp(64px, 7vw, var(--space-section));
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+  }
 }
 
 .section--dark {

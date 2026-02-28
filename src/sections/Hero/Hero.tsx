@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../../components/Container/Container';
 import Section from '../../components/Section/Section';
 import Button from '../../components/Button/Button';
+import leo1 from '../../assets/leo1.jpeg'; // 
 import './hero.css';
 
 const Hero: React.FC = () => {
@@ -11,23 +12,33 @@ const Hero: React.FC = () => {
       <Container>
         <div className="hero__row">
           <div className="hero__text">
-            <span className="hero__label">Método Protagonista do Emagrecimento</span>
+            <span></span>
+
             <h1 className="hero__title">
               Essa é a <em>última vez</em> que você vai tentar emagrecer
             </h1>
+
             <p className="hero__subtitle">
-              Isso porque você está prestes a conhecer um jeito que te permite comer
-              doce, pizza e hambúrguer — e continuar emagrecendo ao mesmo tempo.
+              Isso porque você está prestes a conhecer um{' '}
+              <strong className="hero__subtitle-strong">
+                jeito que te permite comer doce, pizza e hambúrguer e continuar emagrecendo ao mesmo tempo
+              </strong>
+              .
             </p>
+
             <Button size="large">
               Quero emagrecer comendo o que eu gosto
             </Button>
           </div>
 
           <div className="hero__photo">
-            <div className="hero__photo-placeholder">
-              <span>Foto do Léo</span>
-            </div>
+            <img
+              className="hero__photo-img"
+              src={leo1}
+              alt="Léo"
+              loading="eager"
+              decoding="async"
+            />
           </div>
         </div>
       </Container>

@@ -6,28 +6,44 @@ import './faq.css';
 
 const faqItems = [
   {
-    question: 'Eu realmente posso comer o que gosto e emagrecer?',
-    answer: 'Sim! O segredo está no equilíbrio e na individualização do plano. Você não precisa cortar nada, apenas aprender a encaixar os alimentos que ama dentro de uma estratégia inteligente.',
+    question: 'Como funciona a consultoria com o Leonardo Colaço?',
+    answer:
+      'O atendimento é individualizado e feito em cima da tua rotina, dos teus gostos e da tua realidade. A partir disso, Leonardo cria um plano alimentar personalizado pra te ajudar a emagrecer sem abrir mão do que você gosta.',
   },
   {
-    question: 'Em quanto tempo vou ver resultado?',
-    answer: 'A maioria das nossas clientes começa a perceber mudanças já nos primeiros 14 dias. Resultados mais expressivos aparecem entre 30 e 60 dias.',
+    question: 'Vou precisar cortar tudo que gosto de comer?',
+    answer:
+      'Não. O Método Protagonista foi criado exatamente pra acabar com isso. O teu plano é feito incluindo os alimentos que você gosta, pra que você consiga seguir sem sofrimento e ter resultados duradouros.',
   },
   {
-    question: 'O plano alimentar é genérico?',
-    answer: 'Não! O plano é 100% individualizado, feito com base na sua rotina, seus gostos alimentares e sua realidade. Nada de dietas copiadas da internet.',
+    question: 'Em quanto tempo vou começar a ver resultado?',
+    answer:
+      'As pacientes já começam a sentir diferença nos primeiros 14 dias seguindo o plano.',
   },
   {
-    question: 'Preciso ir presencialmente?',
-    answer: 'Não. Todo o acompanhamento é feito de forma online, pelo WhatsApp. Você pode estar em qualquer lugar do Brasil.',
+    question: 'O atendimento é presencial ou online?',
+    answer:
+      'As duas opções estão disponíveis. Você escolhe o formato que melhor se encaixa na tua rotina.',
   },
   {
-    question: 'E se eu tiver dúvidas durante o processo?',
-    answer: 'Você terá acompanhamento direto pelo WhatsApp para tirar dúvidas, ajustar o plano e receber suporte sempre que precisar.',
+    question: 'Depois da consulta há acompanhamento contínuo?',
+    answer:
+      'Sim. O acompanhamento é parte do processo pra garantir que os ajustes necessários sejam feitos e que o teu resultado continue evoluindo.',
   },
   {
-    question: 'Funciona para quem já tentou de tudo?',
-    answer: 'Especialmente para quem já tentou de tudo! O método é justamente para quem cansou de dietas que não funcionam e quer uma abordagem que respeite sua vida.',
+    question: 'Já tentei várias dietas e nunca funcionou. Esse método vai ser diferente?',
+    answer:
+      'Sim, porque as outras dietas foram feitas pra todo mundo. O Método Protagonista é feito pra você, pro teu corpo, pra tua rotina e pros teus gostos. É isso que muda tudo.',
+  },
+  {
+    question: 'Tomo Mounjaro, preciso de acompanhamento nutricional?',
+    answer:
+      'Sim. O Mounjaro acelera o emagrecimento, mas sem um plano alimentar feito pra você, o teu corpo pode perder músculo junto com gordura, ficar flácido e quando o tratamento acabar você corre o risco de reganhar tudo que perdeu. O acompanhamento com Leonardo garante que você emagreça do jeito certo, preservando massa muscular e conquistando um resultado duradouro. Vale lembrar: Leonardo não prescreve nem vende medicações. O trabalho dele é garantir que a tua alimentação potencialize os teus resultados.',
+  },
+  {
+    question: 'Como faço pra começar?',
+    answer:
+      'É só clicar no botão abaixo e entrar em contato com Leonardo. Ele vai te explicar tudo e criar o teu plano personalizado.',
   },
 ];
 

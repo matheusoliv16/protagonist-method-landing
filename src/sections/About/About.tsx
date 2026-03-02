@@ -21,27 +21,29 @@ const About: React.FC = () => {
           <div className="about__text">
             <span className="about__label">Sobre o criador</span>
             <h2 className="about__heading">
-              Afinal, quem é o criador do <em>Método Protagonista</em> do
-              Emagrecimento?
+              Afinal, quem é o criador do{" "}
+              <em>Método Protagonista do Emagrecimento</em>?
             </h2>
 
             <div className="about__bio">
               <p>
-                Leonardo é nutricionista apaixonado por transformar a relação
-                das pessoas com a comida. Cansado de ver pacientes sofrendo com
-                dietas restritivas que nunca funcionavam a longo prazo, ele
-                desenvolveu o Método Protagonista do Emagrecimento.
+                Leonardo Colaço é nutricionista formado pela Universidade de
+                Fortaleza e pós-graduado em nutrição clínica, esportiva e
+                interpretação de exames laboratoriais (CRN 16862).
               </p>
               <p>
-                Sua abordagem é simples: respeitar a individualidade de cada
-                pessoa. Cada plano é feito sob medida, considerando rotina,
-                gostos alimentares e realidade — para que emagrecer seja algo
-                natural, sem sofrimento e sem abrir mão do que você ama comer.
+                Com mais de 4 anos de experiência em consultório, ele se tornou
+                especialista em emagrecimento feminino depois de perceber que o
+                problema das suas pacientes nunca foi falta de vontade. Foi a
+                falta de um método feito pra elas.
               </p>
               <p>
-                Já ajudou centenas de mulheres em Fortaleza e em todo o Brasil a
-                conquistarem o corpo que sempre quiseram, comendo pizza, doce e
-                hambúrguer no processo.
+                Foi a partir daí que desenvolveu o Método Protagonista do
+                Emagrecimento, criado pra simplificar o processo, respeitar os
+                gostos e a rotina de cada paciente e entregar resultados reais
+                sem sofrimento. Um método que já transformou a vida de centenas
+                de mulheres que haviam tentado de tudo e não conseguiam
+                emagrecer.
               </p>
             </div>
           </div>

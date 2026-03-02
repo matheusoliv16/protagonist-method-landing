@@ -16,17 +16,15 @@ const Problem: React.FC = () => {
 
           <div className="problem__text">
             <p>
-              Você já cortou carboidrato, doce, passou fome, se esforçou. E
-              mesmo assim, você não conseguiu chegar naquele corpo que você
-              tanto queria — e se chegou, ganhou todo o peso que tinha perdido.
+              Você já cortou carboidrato, doce, deixou de comer tudo o que
+              gosta, passou fome… fez de tudo. Mas mesmo assim, não conseguiu
+              chegar naquele corpo que você tanto queria.
             </p>
             <p>
-              Isso acontece porque quando você fica sem comer o que gosta por
-              muito tempo, o teu corpo não aguenta.
-            </p>
-            <p>
-              O cortisol dispara, o estresse bate e você acaba comendo duas,
-              três vezes mais do que comeria se nunca tivesse cortado nada.
+              <strong>Isso acontece porque</strong> quando você fica sem comer o que gosta por
+              muito tempo, o cortisol, hormônio do estresse, dispara e você
+              acaba <strong>comendo duas, três vezes mais do que comeria</strong> se nunca
+              tivesse cortado nada.
             </p>
             <p>
               Então o problema{" "}
@@ -35,11 +33,10 @@ const Problem: React.FC = () => {
             </p>
             <p className="problem__conclusion">
               E quando um plano respeita a tua rotina, os teus gostos e a tua
-              vida, o teu corpo responde diferente e aí que o emagrecimento de
-              verdade começa.
+              vida, você começa a <strong>emagrecer mais rápido e sem sofrimento.</strong>
             </p>
           </div>
-          <Button>Quero ter resultados mesmo comendo o que gosto</Button>
+          <Button>QUERO EMAGRECER SEM SOFRIMENTO</Button>
         </div>
       </Container>
     </Section>

@@ -6,35 +6,50 @@
   gap: var(--space-xl);
 }
 
-.testimonials__label {
-  font-family: var(--font-body);
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-medium);
-  letter-spacing: var(--ls-wider);
-  text-transform: uppercase;
-  color: var(--color-gold);
-}
-
 .testimonials__heading {
   font-size: var(--fs-h2);
   line-height: var(--lh-snug);
   color: var(--color-white);
   max-width: 26ch;
+  text-wrap: balance;
 }
 
-.testimonials__heading em {
-  font-style: italic;
-  color: var(--color-gold);
-}
-
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
+/* ===== Carousel wrapper ===== */
+.testimonials__carousel {
+  position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 960px; /* igual ao seu grid antigo */
 }
 
+/* Track: cada “página” ocupa 100% (snap) */
+.testimonials__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  /* tira scrollbars */
+  scrollbar-width: none;
+}
+.testimonials__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Página: aqui fica o grid exatamente como antes */
+.testimonials__page {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+
+  display: grid;
+  grid-template-columns: repeat(var(--per-page, 1), 1fr);
+  gap: var(--space-lg);
+
+  /* sem padding gigante (isso estava “estragando” o desktop) */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cards (seu estilo) */
 .testimonials__card {
   display: flex;
   flex-direction: column;
@@ -73,8 +88,98 @@
   margin-top: auto;
 }
 
+/* “ghost” só pra manter grid 2 colunas quando sobrar 1 item */
+.testimonials__card--ghost {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Nav buttons (mais discretos e não empurram layout) */
+.testimonials__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.testimonials__nav:hover {
+  background: rgba(0, 0, 0, 0.55);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.testimonials__nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* deixa os botões “fora” do grid, sem quebrar o layout */
+.testimonials__nav--prev {
+  left: -52px;
+}
+.testimonials__nav--next {
+  right: -52px;
+}
+
+/* Dots */
+.testimonials__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.testimonials__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.testimonials__dot.is-active {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: scale(1.1);
+}
+
+/* Mobile: 1 por página e botões “dentro” pra não estourar largura */
 @media (max-width: 768px) {
-  .testimonials__grid {
+  .testimonials__page {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .testimonials__card {
+    padding: var(--space-md);
+  }
+
+  .testimonials__nav--prev {
+    left: 8px;
+  }
+  .testimonials__nav--next {
+    right: 8px;
   }
 }

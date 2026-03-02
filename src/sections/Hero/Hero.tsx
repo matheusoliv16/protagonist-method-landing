@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="hero__subtitle">
-              Isso porque você está prestes a conhecer um{' '}
+              Você está prestes a conhecer um{' '}
               <strong className="hero__subtitle-strong">
                 jeito que te permite comer doce, pizza e hambúrguer e continuar
                 emagrecendo ao mesmo tempo

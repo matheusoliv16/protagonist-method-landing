@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 900;
-  padding: 1rem 0;
+  padding: 0.9rem 0;
   transition: background-color var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out);
 }
@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .navbar__logo {
@@ -28,12 +29,26 @@
   color: var(--color-gold);
   letter-spacing: var(--ls-tight);
   text-decoration: none;
+
+  /* não deixa o logo “esmagar” */
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
+/* ===== Desktop links ===== */
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  justify-content: flex-end;
+
+  /* gap mais controlado para não quebrar */
+  gap: clamp(0.75rem, 1.5vw, var(--space-lg));
+
+  /* evita quebra estranha */
+  white-space: nowrap;
+
+  /* permite encolher em telas menores */
+  min-width: 0;
 }
 
 .navbar__link {
@@ -43,24 +58,33 @@
   color: var(--color-gray-light);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out);
+
+  /* evita quebra “Depoiment os” */
+  white-space: nowrap;
 }
 
 .navbar__link:hover {
   color: var(--color-gold);
 }
 
+/* CTA menor e sem empurrar menu */
 .navbar__cta {
   font-family: var(--font-body);
   font-size: var(--fs-caption);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  padding: 0.6rem 1.5rem;
+
+  padding: 0.55rem 1.1rem;
   background-color: var(--color-gold);
   color: var(--color-black);
   border-radius: var(--radius-full);
   text-decoration: none;
   transition: all var(--duration-normal) var(--ease-out);
+
+  /* não estoura, não quebra, não domina */
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .navbar__cta:hover {
@@ -68,7 +92,7 @@
   transform: translateY(-1px);
 }
 
-/* Mobile hamburger */
+/* ===== Mobile hamburger ===== */
 .navbar__toggle {
   display: none;
   flex-direction: column;
@@ -76,7 +100,8 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
+  flex-shrink: 0;
 }
 
 .navbar__toggle-bar {
@@ -87,42 +112,25 @@
   transition: all var(--duration-fast) var(--ease-out);
 }
 
-@media (max-width: 768px) {
-  .navbar__toggle {
-    display: flex;
-  }
+/* Overlay do drawer (precisa por causa do TSX novo) */
+.navbar__overlay {
+  display: none;
+}
 
-  .navbar__links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: var(--color-black-soft);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5rem var(--container-padding) var(--space-lg);
-    gap: var(--space-md);
-    transition: right var(--duration-normal) var(--ease-out);
-    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
-  }
-
-  .navbar__links--open {
-    right: 0;
-  }
-
-  .navbar__link {
-    font-size: var(--fs-body);
-  }
+.navbar__overlay--open {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 899; /* abaixo do menu */
 }
 
 /* botão de fechar dentro do drawer */
 .navbar__close {
   display: none;
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, env(safe-area-inset-right));
   width: 40px;
   height: 40px;
   border: none;
@@ -151,28 +159,71 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ===== Ajuste fino em telas “meio termo” ===== */
+@media (max-width: 1024px) {
+  .navbar__link {
+    font-size: 0.85rem; /* segura quebrar */
+  }
+
+  .navbar__cta {
+    padding: 0.5rem 0.95rem;
+  }
+}
+
+/* ===== Mobile drawer ===== */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  /* some links do desktop (vira drawer) */
   .navbar__links {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: var(--color-black-soft);
+    width: min(82vw, 320px);
+    height: 100svh;
+
+    background-color: rgba(12, 12, 12, 0.98);
+    backdrop-filter: blur(12px);
+
     flex-direction: column;
     align-items: flex-start;
-    padding: 5rem var(--container-padding) var(--space-lg);
-    gap: var(--space-md);
+    justify-content: flex-start;
+
+    padding-top: max(72px, env(safe-area-inset-top));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+
+    gap: 1rem;
     transition: right var(--duration-normal) var(--ease-out);
-    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
+    box-shadow: -6px 0 40px rgba(0, 0, 0, 0.55);
+
+    z-index: 900; /* acima do overlay */
   }
 
   .navbar__links--open {
     right: 0;
   }
 
-  /* agora o X aparece no mobile */
+  .navbar__link {
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.4rem 0;
+  }
+
+  .navbar__cta {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1rem;
+    margin-top: 0.25rem;
+  }
+
   .navbar__close {
     display: inline-flex;
     align-items: center;

@@ -100,10 +100,6 @@
   color: rgba(255, 255, 255, 0.98);
 }
 
-.hero__cta {
-  /* no desktop mantém natural */
-}
-
 .hero__photo {
   flex-shrink: 0;
 }

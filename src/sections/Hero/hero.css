@@ -177,22 +177,25 @@
     height: 520px;
   }
 
-  .hero__row {
-    flex-direction: column;
-    text-align: center;
-    margin-top: 90px;
-    justify-content: space-between;
-    min-height: calc(100svh - 72px);
-    padding-top: 110px;
-    padding-bottom: 40px;
-    gap: 0;
-  }
+.hero__row {
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+
+  min-height: 100svh;
+
+  justify-content: flex-start;
+
+  padding-top: 92px;
+  padding-bottom: 28px;
+}
 
   .hero__text {
     align-items: center;
     gap: 0.9rem;
     z-index: 1;
     width: min(92vw, 560px);
+    margin-top: auto;
   }
 
   .hero__title {

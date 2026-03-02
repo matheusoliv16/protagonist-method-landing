@@ -25,7 +25,6 @@ const Hero: React.FC = () => {
         <div className="hero__row">
           <div className="hero__content">
             <div className="hero__text">
-              <span className="hero__label">Método Protagonista</span>
 
               <h1 className="hero__title">
                 Essa é a <em>última vez</em> que você vai tentar emagrecer

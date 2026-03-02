@@ -8,7 +8,6 @@ import './hero.css';
 const Hero: React.FC = () => {
   return (
     <Section id="hero" variant="dark" className="hero">
-      {/* Fundo APENAS no mobile */}
       <div className="hero__media" aria-hidden="true">
         <img
           className="hero__media-img"
@@ -24,28 +23,28 @@ const Hero: React.FC = () => {
 
       <Container>
         <div className="hero__row">
-          <div className="hero__text">
-            <span className="hero__label">Método Protagonista</span>
+          <div className="hero__content">
+            <div className="hero__text">
+              <span className="hero__label">Método Protagonista</span>
 
-            <h1 className="hero__title">
-              Essa é a <em>última vez</em> que você vai tentar emagrecer
-            </h1>
+              <h1 className="hero__title">
+                Essa é a <em>última vez</em> que você vai tentar emagrecer
+              </h1>
 
-            <p className="hero__subtitle">
-              Você está prestes a conhecer um{' '}
-              <strong className="hero__subtitle-strong">
-                jeito que te permite comer doce, pizza e hambúrguer e continuar
-                emagrecendo ao mesmo tempo
-              </strong>
-              .
-            </p>
+              <p className="hero__subtitle">
+                Você está prestes a conhecer um{' '}
+                <strong className="hero__subtitle-strong">
+                  jeito que te permite comer doce, pizza e hambúrguer e continuar
+                  emagrecendo ao mesmo tempo
+                </strong>
+                .
+              </p>
 
-            <Button size="large" className="hero__cta">
-              Quero emagrecer comendo o que eu gosto
-            </Button>
+              <Button size="large" className="hero__cta">
+                Quero emagrecer comendo o que eu gosto
+              </Button>
+            </div>
           </div>
-
-          {/* Foto “card” para desktop (como era antes) */}
           <div className="hero__photo">
             <img
               className="hero__photo-img"

@@ -26,7 +26,7 @@
 
 /* ===== MOBILE BG (ativo só no mobile) ===== */
 .hero__media {
-  display: none; /* liga no mobile */
+  display: none;
 }
 
 .hero__media-img {
@@ -42,8 +42,18 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(80% 60% at 50% 20%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.72) 70%, rgba(0, 0, 0, 0.9) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.78) 55%, rgba(0,0,0,0.92) 100%);
+    radial-gradient(
+      80% 60% at 50% 20%,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 0.68) 70%,
+      rgba(0, 0, 0, 0.90) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.70) 55%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
 }
 
 /* ===== Layout desktop (como estava) ===== */
@@ -117,14 +127,16 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== MOBILE: igual ao exemplo (bg + texto sobreposto) ===== */
+/* ===== MOBILE: foto em destaque + texto “grudado” (estilo anúncio) ===== */
 @media (max-width: 768px) {
   .hero {
     min-height: 100svh;
-    align-items: center;
+    align-items: stretch;
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
   }
 
-  /* liga o fundo */
+  /* fundo atmosférico */
   .hero__media {
     display: block;
     position: absolute;
@@ -132,29 +144,64 @@
     z-index: 0;
   }
 
-  /* reduz glow para não competir com a foto */
+  /* glow mais sutil */
   .hero__bg-accent {
-    opacity: 0.35;
+    opacity: 0.25;
+    top: -55%;
+    width: 520px;
+    height: 520px;
   }
 
-  /* vira 1 coluna e centraliza */
   .hero__row {
     flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
     text-align: center;
-    gap: 1.25rem;
-    justify-content: center;
-    padding-top: max(64px, env(safe-area-inset-top));
-    padding-bottom: max(56px, env(safe-area-inset-bottom));
+    padding-top: 64px; /* espaço do header/menu */
   }
 
+  /* ✅ FOTO GRANDE NO MOBILE (volta a aparecer) */
+  .hero__photo {
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .hero__photo-img {
+    width: min(92vw, 440px);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 28px 70px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(200, 165, 90, 0.10);
+    transform: translateY(8px);
+  }
+
+  /* ✅ TEXTO “COLADO” NA FOTO (overlap) */
   .hero__text {
     align-items: center;
-    gap: 0.95rem;
+    gap: 0.85rem;
+    z-index: 2;
+
+    /* sobe o texto por cima da foto */
+    margin-top: -34px;
+
+    /* painel escuro com blur (efeito anúncio) */
+    background: rgba(0, 0, 0, 0.58);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+
+    padding: 1.1rem 1rem 1.2rem;
+    width: min(92vw, 520px);
+
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
   }
 
   .hero__label {
-    background: rgba(0,0,0,0.25);
-    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.22);
     border-color: rgba(200, 165, 90, 0.35);
     padding: 0.45rem 1.1rem;
   }
@@ -172,21 +219,25 @@
     color: rgba(255, 255, 255, 0.92);
   }
 
-  /* CTA full width no mobile (melhor conversão) */
   .hero__cta {
     width: 100%;
     max-width: 520px;
-  }
-
-  /* some a foto “card” no mobile (porque a foto virou fundo) */
-  .hero__photo {
-    display: none;
+    margin-top: 0.35rem;
   }
 }
 
-/* opcional: telas bem pequenas */
+/* telas bem pequenas */
 @media (max-width: 480px) {
   .hero__row {
-    gap: 1.1rem;
+    padding-top: 58px;
+  }
+
+  .hero__text {
+    margin-top: -28px;
+    border-radius: 26px;
+  }
+
+  .hero__photo-img {
+    border-radius: 24px;
   }
 }

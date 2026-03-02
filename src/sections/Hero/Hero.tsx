@@ -8,7 +8,7 @@ import './hero.css';
 const Hero: React.FC = () => {
   return (
     <Section id="hero" variant="dark" className="hero">
-      {/* imagem vira “bg” no mobile */}
+      {/* Fundo APENAS no mobile */}
       <div className="hero__media" aria-hidden="true">
         <img
           className="hero__media-img"
@@ -20,9 +20,12 @@ const Hero: React.FC = () => {
         <div className="hero__media-overlay" />
       </div>
 
+      <div className="hero__bg-accent" aria-hidden="true" />
+
       <Container>
         <div className="hero__row">
           <div className="hero__text">
+            <span className="hero__label">Método Protagonista</span>
 
             <h1 className="hero__title">
               Essa é a <em>última vez</em> que você vai tentar emagrecer
@@ -42,8 +45,8 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          {/* foto “card” só no desktop */}
-          <div className="hero__photo" aria-hidden="true">
+          {/* Foto “card” para desktop (como era antes) */}
+          <div className="hero__photo">
             <img
               className="hero__photo-img"
               src={leo1}
@@ -53,11 +56,6 @@ const Hero: React.FC = () => {
             />
           </div>
         </div>
-
-        {/* seta pra baixo (mobile) */}
-        <a className="hero__scroll" href="#about" aria-label="Role para ver mais">
-          <span className="hero__scroll-icon">↓</span>
-        </a>
       </Container>
     </Section>
   );

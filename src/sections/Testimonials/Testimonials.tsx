@@ -67,7 +67,6 @@ const Testimonials: React.FC = () => {
   const prev = () => scrollToPage(page - 1);
   const next = () => scrollToPage(page + 1);
 
-  // Atualiza page quando o usuário arrasta/scrolla
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -82,7 +81,6 @@ const Testimonials: React.FC = () => {
     return () => track.removeEventListener('scroll', onScroll);
   }, [totalPages]);
 
-  // ✅ CORREÇÃO AQUI
   const trackStyle = {
     '--per-page': perPage,
   } as React.CSSProperties;
@@ -92,7 +90,7 @@ const Testimonials: React.FC = () => {
       <Container>
         <div className="testimonials__content">
           <h2 className="testimonials__heading">
-            Mulheres comuns, assim como você, que aprovaram o método
+            Se elas conseguiram, você também consegue
           </h2>
 
           <div className="testimonials__carousel" aria-label="Depoimentos">

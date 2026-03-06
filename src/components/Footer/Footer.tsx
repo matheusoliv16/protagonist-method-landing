@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/leonardocolaconutri/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer__social-link"

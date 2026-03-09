@@ -9,7 +9,9 @@ import './hero.css';
 const Hero: React.FC = () => {
   return (
     <Section id="hero" variant="dark" className="hero">
-      <div className="hero__bg-accent" aria-hidden="true" />
+      <div className="hero__bg-accent hero__bg-accent--top" aria-hidden="true" />
+      <div className="hero__bg-accent hero__bg-accent--bottom" aria-hidden="true" />
+      <div className="hero__bg-grid" aria-hidden="true" />
 
       <Container>
         <div className="hero__row">
@@ -35,37 +37,32 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="hero__photo">
-            <div className="hero__device">
-              <div className="hero__device-bezel">
-                <div className="hero__device-screen">
-                  <img
-                    className="hero__device-image"
-                    src={leo1}
-                    alt="Leonardo Colaço"
-                    loading="eager"
-                    decoding="async"
-                  />
+            <div className="hero__portrait">
+              <img
+                className="hero__portrait-image"
+                src={leo1}
+                alt="Leonardo Colaço"
+                loading="eager"
+                decoding="async"
+              />
 
-                  <div className="hero__device-glass" />
+              <div className="hero__portrait-vignette" />
+              <div className="hero__portrait-bottom-fade" />
+              <div className="hero__portrait-glow" />
+              <div className="hero__portrait-glass" />
 
-                  <div className="hero__device-ui">
-                    <div className="hero__device-brand">
-                      <img
-                        className="hero__device-logo"
-                        src={logo}
-                        alt="Logo"
-                        loading="eager"
-                        decoding="async"
-                      />
+              <div className="hero__portrait-brand">
+                <img
+                  className="hero__portrait-logo"
+                  src={logo}
+                  alt="Logo"
+                  loading="eager"
+                  decoding="async"
+                />
 
-                      <h3 className="hero__device-name">Leonardo Colaço</h3>
-                      <p className="hero__device-role">NUTRICIONISTA</p>
-                    </div>
-                  </div>
-                </div>
+                <h3 className="hero__portrait-name">Leonardo Colaço</h3>
+                <p className="hero__portrait-role">NUTRICIONISTA</p>
               </div>
-
-              <div className="hero__device-shadow" aria-hidden="true" />
             </div>
           </div>
         </div>

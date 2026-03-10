@@ -24,14 +24,29 @@ const textTestimonials: TestimonialItem[] = [
   },
 ];
 
-// Lê automaticamente todas as imagens da pasta:
-// src/assets/depoimentos/
+/**
+ * Preencha aqui os nomes dos depoimentos em imagem.
+ * A chave deve ser exatamente o nome do arquivo SEM extensão.
+ */
+const testimonialNamesByFile: Record<string, string> = {
+  depoimento1: "Pedro Arthur",
+  depoimento2: "André Bastos",
+  depoimento3: " Maria Bonita",
+  depoimento4: " Lincoln Lima",
+  depoimento5: " Marcio Emanuel",
+  depoimento7: " Carolina Carvalho",
+  depoimento9: " Berenice Carneiro",
+  depoimento10: " Lilian Mourão",
+  depoimento11: " Lia Barreira",
+  depoimento12: " Camile Girão",
+};
+
 const imageModules = import.meta.glob(
   "../../assets/depoimentos/*.{png,jpg,jpeg,webp,avif}",
   {
     eager: true,
     import: "default",
-  },
+  }
 ) as Record<string, string>;
 
 const imageTestimonials: TestimonialItem[] = Object.entries(imageModules)
@@ -51,17 +66,17 @@ const imageTestimonials: TestimonialItem[] = Object.entries(imageModules)
         .split("/")
         .pop()
         ?.replace(/\.[^.]+$/, "") || `depoimento-${index + 1}`;
+
     const numberMatch = fileName.match(/\d+/);
     const labelNumber = numberMatch ? numberMatch[0] : String(index + 1);
 
     return {
       id: `img-${fileName}`,
-      name: `Depoimento ${labelNumber}`,
+      name: testimonialNamesByFile[fileName] || `Depoimento ${labelNumber}`,
       image: src,
     };
   });
 
-// Prints primeiro, textos no final
 const testimonials: TestimonialItem[] = [
   ...imageTestimonials,
   ...textTestimonials,
@@ -81,11 +96,13 @@ const Testimonials: React.FC = () => {
 
   const pages = useMemo(() => {
     const out: TestimonialItem[][] = [];
+
     for (let i = 0; i < testimonials.length; i += perPage) {
       out.push(testimonials.slice(i, i + perPage));
     }
+
     return out;
-  }, [perPage]);
+  }, [perPage, testimonials]);
 
   const totalPages = pages.length || 1;
 
@@ -95,8 +112,13 @@ const Testimonials: React.FC = () => {
     const track = trackRef.current;
     if (!track) return;
 
+    const currentPage = Math.min(page, totalPages - 1);
     const pageWidth = track.clientWidth || 1;
-    track.scrollTo({ left: pageWidth * Math.min(page, totalPages - 1) });
+
+    track.scrollTo({
+      left: pageWidth * currentPage,
+      behavior: "auto",
+    });
   }, [totalPages, perPage]);
 
   const scrollToPage = (nextPage: number) => {
@@ -190,14 +212,14 @@ const Testimonials: React.FC = () => {
                           </div>
                         ) : null}
 
-                        {isTextOnly || isMixed ? (
-                          <>
-                            <p className="testimonials__card-text">{t.text}</p>
+                        {t.text ? (
+                          <p className="testimonials__card-text">{t.text}</p>
+                        ) : null}
 
-                            <span className="testimonials__card-name">
-                              — {t.name}
-                            </span>
-                          </>
+                        {t.name ? (
+                          <span className="testimonials__card-name">
+                            — {t.name}
+                          </span>
                         ) : null}
                       </article>
                     );

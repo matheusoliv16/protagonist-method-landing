@@ -47,6 +47,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   text-align: left;
   gap: var(--space-sm);
   padding: var(--space-lg);
@@ -66,6 +67,9 @@
 
 .testimonials__card--image-only {
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .testimonials__card--text-only {
@@ -104,25 +108,6 @@
   max-height: 340px;
 }
 
-.testimonials__card-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.42rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(200, 165, 90, 0.12);
-  color: var(--color-gold);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
-.testimonials__card-stars {
-  color: var(--color-gold);
-  font-size: var(--fs-small);
-  letter-spacing: 2px;
-}
-
 .testimonials__card-text {
   font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
@@ -135,6 +120,12 @@
   font-weight: var(--fw-semibold);
   color: var(--color-gold);
   margin-top: auto;
+}
+
+.testimonials__card--image-only .testimonials__card-name {
+  margin-top: 0.9rem;
+  width: 100%;
+  text-align: center;
 }
 
 .testimonials__card--ghost {
@@ -239,8 +230,11 @@
     border-radius: 16px;
   }
 
+  .testimonials__card--image-only {
+    padding: 16px;
+  }
+
   .testimonials__card-image-wrap {
-    border-radius: 14px;
     min-height: 420px;
     max-height: 78vh;
   }

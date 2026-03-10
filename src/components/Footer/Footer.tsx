@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/people/Leonardo-Cola%C3%A7o-nutricionista/61559333581863/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer__social-link"

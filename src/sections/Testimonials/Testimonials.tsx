@@ -24,10 +24,6 @@ const textTestimonials: TestimonialItem[] = [
   },
 ];
 
-/**
- * Preencha aqui os nomes dos depoimentos em imagem.
- * A chave deve ser exatamente o nome do arquivo SEM extensão.
- */
 const testimonialNamesByFile: Record<string, string> = {
   depoimento1: "Pedro Arthur",
   depoimento2: "André Bastos",
